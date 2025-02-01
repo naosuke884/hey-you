@@ -1,12 +1,13 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"time"
 
 	"github.com/gorilla/mux"
+	server "github.com/naosuke884/hey-you"
 	"github.com/naosuke884/hey-you/handler"
+	"github.com/rs/zerolog/log"
 )
 
 func main() {
@@ -16,9 +17,10 @@ func main() {
 
 	srver := &http.Server{
 		Handler:      router,
-		Addr:         "127.0.0.1:8080",
+		Addr:         server.Envs.Address,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-	log.Fatal(srver.ListenAndServe())
+	log.Info().Str("address", server.Envs.Address).Msg("server start")
+	log.Fatal().Err(srver.ListenAndServe()).Msg("server stop")
 }

@@ -39,6 +39,7 @@ env:
   PROJECT_ID: ${{ secrets.GOOGLE_CLOUDE_PROJECT_ID }} # TODO: update to your Google Cloud project ID
   REGION: 'asia-northeast1' # TODO: update to your region
   SERVICE: 'hey-you' # TODO: update to your service name
+  ADDRESS: ${{ secrets.ADDRESS }}
 
 jobs:
   deploy:
