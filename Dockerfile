@@ -9,8 +9,8 @@ RUN curl -O https://nodejs.org/dist/v20.18.0/node-v20.18.0-linux-x64.tar.xz \
   && tar -xvf node-v20.18.0-linux-x64.tar.xz -C /usr/local/ \
   && rm node-v20.18.0-linux-x64.tar.xz \
   && curl -fsSL https://get.pnpm.io/install.sh | sh -
-WORKDIR /work/
-COPY ./server .
+COPY ./server /work/
+COPY ./client /work/
 WORKDIR /work/server
 RUN go mod download
 RUN CGO_ENABLE=0 go build -trimpath -ldflags='-s -w' -o main
