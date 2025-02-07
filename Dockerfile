@@ -13,7 +13,7 @@ WORKDIR /work/
 COPY ./server .
 WORKDIR /work/server
 RUN go mod download
-RUN RUN CGO_ENABLE=0 go build -trimpath -ldflags -o main '-s -o' .
+RUN CGO_ENABLE=0 go build -trimpath -ldflags='-s -w' ./...
 
 FROM ubuntu:24.04 AS production
 WORKDIR /work/
