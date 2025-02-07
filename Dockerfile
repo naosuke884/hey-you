@@ -9,8 +9,8 @@ RUN curl -O https://nodejs.org/dist/v20.18.0/node-v20.18.0-linux-x64.tar.xz \
   && tar -xvf node-v20.18.0-linux-x64.tar.xz -C /usr/local/ \
   && rm node-v20.18.0-linux-x64.tar.xz \
   && curl -fsSL https://get.pnpm.io/install.sh | sh -
-COPY server /work/
-COPY client /work/
+COPY server /work/server/
+COPY client /work/client/
 RUN ls -la /work/
 RUN ls -la /work/server
 WORKDIR /work/server
