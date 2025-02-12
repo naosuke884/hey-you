@@ -32,6 +32,14 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-go-
 
+    - name: Cache Go build
+      uses: actions/cache@v3
+      with:
+        path: ~/go/build-cache
+        key: ${{ runner.os }}-build-${{ hashFiles('./server/**') }}
+        restore-keys: |
+          ${{ runner.os }}-build-
+
     - name: Build
       run: go build -v ./...
 
