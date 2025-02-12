@@ -39,7 +39,7 @@ env:
   REGION: 'asia-northeast1' # TODO: update to your region
   SERVICE: 'hey-you' # TODO: update to your service name
   WORKLOAD_IDENTITY_PROVIDER: '${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}' # TODO: update to your workload identity provider
-  ARTIFACT_REGISTRY: '$${{ secrets.ARTIFACT_REGISTRY }}'
+  ARTIFACT_REGISTRY: '${{ secrets.ARTIFACT_REGISTRY }}'
 
 jobs:
   deploy:
