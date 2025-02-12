@@ -12,7 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./server
@@ -23,6 +23,14 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.22'
+    
+    - name: Cache Go modules
+      uses: actions/cache@v3
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
 
     - name: Build
       run: go build -v ./...
