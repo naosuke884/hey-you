@@ -56,7 +56,7 @@ env:
   PROJECT_ID: crypto-order-446202-b5 # TODO: update Google Cloud project id
   GAR_LOCATION: asia-northeast1 # TODO: update Artifact Registry location
   REPOSITORY: hey-you # TODO: update Artifact Registry repository name
-  SERVICE: deploy # TODO: update Cloud Run service name
+  SERVICE: hey-you # TODO: update Cloud Run service name
   REGION: asia-northeast1 # TODO: update Cloud Run service region
 
 jobs:
