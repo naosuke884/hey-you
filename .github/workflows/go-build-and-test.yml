@@ -4,14 +4,12 @@
 name: Go
 
 on:
-  push:
-    branches: [ "main", "develop" ]
   pull_request:
     branches: [ "main", "develop" ]
 
 jobs:
 
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     defaults:
       run:
