@@ -17,10 +17,10 @@ func main() {
 
 	srver := &http.Server{
 		Handler:      router,
-		Addr:         server.Envs.Address,
+		Addr:         server.Host + ":" + server.Port,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-	log.Info().Str("address", server.Envs.Address).Msg("server start")
+	log.Info().Str("address", server.Host + ":" + server.Port).Msg("server start")
 	log.Fatal().Err(srver.ListenAndServe()).Msg("server stop")
 }
