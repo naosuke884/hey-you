@@ -11,8 +11,8 @@ import (
 )
 
 type envs struct {
-	Host string `env:"HOST,required"`
-	Port string `env:"PORT,required"`
+	Host string `env:"CONTAINER_HOST,required"`
+	Port string `env:"CONTAINER_PORT,required"`
 }
 
 var Envs envs
