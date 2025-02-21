@@ -15,12 +15,12 @@ func main() {
 	router.HandleFunc("/", handler.HomeHandler)
 	http.Handle("/", router)
 
-	srver := &http.Server{
+	srv := &http.Server{
 		Handler:      router,
-		Addr:         server.Envs.Address,
+		Addr:         server.Envs.Host + ":" + server.Envs.Port,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-	log.Info().Str("address", server.Envs.Address).Msg("server start")
-	log.Fatal().Err(srver.ListenAndServe()).Msg("server stop")
+	log.Info().Str("address", server.Envs.Host + ":" + server.Envs.Port).Msg("server start")
+	log.Fatal().Err(srv.ListenAndServe()).Msg("server stop")
 }
