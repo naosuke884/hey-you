@@ -1,6 +1,9 @@
 FROM node:23-bullseye AS node-build
 COPY client /work/client/
 
+# temporary workaround for build error
+WORKDIR /work/client/build
+
 FROM golang:1.24.0-bullseye AS go-build
 COPY server /work/server/
 COPY --from=node-build /work/client/build /work/client
