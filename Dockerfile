@@ -1,7 +1,7 @@
 FROM node:23-bullseye AS node-build
 COPY client /work/client/
 
-FROM golang:1.x-bullseye AS go-build
+FROM golang:1.24.0-bullseye AS go-build
 COPY server /work/server/
 COPY --from=node-build /work/client/build /work/client
 WORKDIR /work/server
