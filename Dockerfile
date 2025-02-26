@@ -14,6 +14,6 @@ RUN chmod +x main
 
 FROM ubuntu:24.04 AS production
 WORKDIR /work/
-COPY --from=build /work/server/main ./server/main
+COPY --from=go-build /work/server/main ./server/main
 USER ubuntu
 CMD ["./server/main"]
