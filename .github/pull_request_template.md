@@ -1,5 +1,2 @@
 ## Discription
 ...
-
-## Related issue
-- close
