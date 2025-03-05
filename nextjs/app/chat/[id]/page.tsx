@@ -1,10 +1,12 @@
-type ChatPageProps = {
+import { FC } from 'react';
+
+interface ChatPageProps {
   params: {
     id: string;
   };
 };
 
-export default async function ChatPage({ params }: ChatPageProps) {
+const ChatPage: FC<ChatPageProps> = async ({ params }) => {
   const { id } = await params;
   return (
     <div>
@@ -13,3 +15,5 @@ export default async function ChatPage({ params }: ChatPageProps) {
     </div>
   );
 }
+
+export default ChatPage;
