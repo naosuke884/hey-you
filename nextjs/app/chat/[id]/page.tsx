@@ -1,17 +1,10 @@
 import { FC } from 'react';
 
-interface ChatPageProps {
-  params: {
-    id: string;
-  };
-};
-
-const ChatPage: FC<ChatPageProps> = async ({ params }) => {
-  const { id } = await params;
+const ChatPage: FC = async () => {
   return (
     <div>
       <h1>Chat Page</h1>
-      <p>これは {id} のchat ページです。</p>
+      <p>これは のchat ページです。</p>
     </div>
   );
 }
