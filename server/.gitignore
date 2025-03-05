@@ -1,0 +1,4 @@
+gha-creds-*.json
+
+# for air which is a hot reload tool
+tmp/
