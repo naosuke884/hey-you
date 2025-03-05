@@ -1,12 +1,6 @@
 import { FC } from 'react';
 
-interface ChatPageProps {
-  params: {
-    id: string;
-  };
-};
-
-const ChatPage: FC<ChatPageProps> = async ({ params }) => {
+const ChatPage: FC = async () => {
   return (
     <div>
       <h1>Chat Page</h1>
