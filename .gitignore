@@ -1,2 +1,3 @@
 # for pnpm
 .pnpm-store/
+gha-creds-*.json
