@@ -1,0 +1,10 @@
+cd nextjs
+pnpm run check
+cd ..
+
+cd go
+go mod tidy
+go fmt ./...
+go tool golangci-lint run
+go test -race -cover ./...
+cd ..

@@ -21,6 +21,6 @@ func main() {
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-	log.Info().Str("address", server.Envs.Host + ":" + server.Envs.Port).Msg("server start")
+	log.Info().Str("address", server.Envs.Host+":"+server.Envs.Port).Msg("server start")
 	log.Fatal().Err(srv.ListenAndServe()).Msg("server stop")
 }

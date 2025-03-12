@@ -1,0 +1,61 @@
+run:
+  timeout: 5m
+  tests: true
+
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - ineffassign
+    - gofmt
+    - goimports
+    - gocyclo
+    - gosec
+    - gosimple
+    - unparam
+
+linters-settings:
+  gocyclo:
+    min-complexity: 15
+  gosec:
+    exclude:
+      - G104
+  misspell:
+    locale: US
+  lll:
+    line-length: 120
+    tab-width: 1
+    allow-long-lines: false
+
+issues:
+  exclude-use-default: false
+  exclude:
+    - "error return value not checked.*(Close|Log|Print).*$"
+    - ".*should have comment.*"
+  exclude-rules:
+    - linters:
+        - errcheck
+      text: "os\\.Close.*error return value not checked"
+  exclude-dirs:
+    - testdata
+  exclude-files:
+    - ".*\\.gen\\.go"
+  uniq-by-line: true
+
+output:
+  formats:
+    - format: colored-line-number
+      path: stdout
+  print-issued-lines: true
+
+severity:
+  default-severity: error
+  rules:
+    - linters:
+        - gocyclo
+      severity: warning
+    - linters:
+        - lll
+      severity: warning
