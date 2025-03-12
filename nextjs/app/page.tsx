@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from "react";
 
 const TopPage: FC = () => {
   return (
@@ -6,6 +6,6 @@ const TopPage: FC = () => {
       <h1>Top Page</h1>
     </div>
   );
-}
+};
 
 export default TopPage;

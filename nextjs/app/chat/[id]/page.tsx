@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from "react";
 
 const ChatPage: FC = async () => {
   return (
@@ -7,6 +7,6 @@ const ChatPage: FC = async () => {
       <p>これは のchat ページです。</p>
     </div>
   );
-}
+};
 
 export default ChatPage;
